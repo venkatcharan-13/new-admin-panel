@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <df-messenger intent="WELCOME" chat-title="Jorden-Sky ChatBot" agent-id="3234aa8d-9502-4e63-8800-18d08d441393" language-code="en"></df-messenger>
+    <script>
+        const dfMessenger = document.querySelector('df-messenger');
+        var today = new Date();
+
+        console.log(today.getHours());
+        if (today.getHours() > 12) {
+            console.log('evening')
+            dfMessenger.setAttribute('intent', 'WELCOME-M')
+            console.log(dfMessenger)
+        }
+    </script>
+</body>
+
+</html>
